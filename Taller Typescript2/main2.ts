@@ -79,26 +79,34 @@ function carta1(id) {
             var cardText = document.createElement("p");
             cardText.classList.add("card-text");
             cardText.innerText = c.description;
-
             
+            // Crear el texto adicional
+            var platformText = document.createElement("p");
+            platformText.innerText = "Platform: ";
+
+            // Crear el hipervínculo
+            var platformLink = document.createElement("a");
+            platformLink.href = c.platform; // Establecer la URL del hipervínculo
+            platformLink.innerText = c.platform; // Texto del hipervínculo
+            
+            // Añadir el hipervínculo como un hijo del texto adicional
+            platformText.appendChild(platformLink);
+            
+            // Añadir el texto adicional y el hipervínculo al cardBodyDiv
             cardBodyDiv.appendChild(cardTitle);
             cardBodyDiv.appendChild(cardText);
+            cardBodyDiv.appendChild(platformText);
 
             cardDiv.appendChild(img);
             cardDiv.appendChild(cardBodyDiv);
             
             var originalDiv = document.getElementById("div-original");
             if (originalDiv) {
-            
                 originalDiv.appendChild(cardDiv);
             } else {
                 console.error("Elemento 'div-original' no encontrado en el documento.");
             }
 
-            
-            
-
-            
             cartaActual = cardDiv;
         }
     });
