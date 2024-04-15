@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Nombres Aleatorios</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            cursor: pointer;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        /* Estilo para simular clic */
+        .clickable {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .clickable input[type="checkbox"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .clickable label {
+            display: block;
+            padding: 8px;
+        }
+        .clickable input[type="checkbox"]:checked + label {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se generan los nombres aleatorios -->
+        <tr class="clickable">
+            <td id="nombre1">
+                <input type="checkbox" id="checkbox1" name="nombre1">
+                <label for="checkbox1">Juan</label>
+            </td>
+        </tr>
+        <tr class="clickable">
+            <td id="nombre2">
+                <input type="checkbox" id="checkbox2" name="nombre2">
+                <label for="checkbox2">María</label>
+            </td>
+        </tr>
+        <!-- Repite esto para los demás nombres -->
+    </tbody>
+</table>
+
+<script>
+    // Capturar evento de clic para cada celda
+    document.querySelectorAll('.clickable').forEach(item => {
+        item.addEventListener('click', event => {
+            // Manejar el clic según el id de la celda
+            switch (item.id) {
+                case 'nombre1':
+                    console.log('Haz hecho clic en Juan');
+                    break;
+                case 'nombre2':
+                    console.log('Haz hecho clic en María');
+                    break;
+                // Agregar más casos según sea necesario para cada nombre
+                default:
+                    console.log('Clic en una celda no identificada');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

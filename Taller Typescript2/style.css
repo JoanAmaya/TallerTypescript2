@@ -1,0 +1,14 @@
+.button-like {
+    border: none;
+    background: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Estilo cuando se pasa el mouse */
+.button-like:hover {
+    color: darkblue;
+}
