@@ -80,19 +80,19 @@ function carta1(id) {
             cardText.classList.add("card-text");
             cardText.innerText = c.description;
             
-            // Crear el texto adicional
+            
             var platformText = document.createElement("p");
             platformText.innerText = "Platform: ";
 
-            // Crear el hipervínculo
-            var platformLink = document.createElement("a");
-            platformLink.href = c.platform; // Establecer la URL del hipervínculo
-            platformLink.innerText = c.platform; // Texto del hipervínculo
             
-            // Añadir el hipervínculo como un hijo del texto adicional
+            var platformLink = document.createElement("a");
+            platformLink.href = c.platform;
+            platformLink.innerText = c.platform; 
+            
+            
             platformText.appendChild(platformLink);
             
-            // Añadir el texto adicional y el hipervínculo al cardBodyDiv
+            
             cardBodyDiv.appendChild(cardTitle);
             cardBodyDiv.appendChild(cardText);
             cardBodyDiv.appendChild(platformText);
